@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gal & Almog's Wedding</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="couple-names">Gal & Almog</h1>
+        <p class="wedding-date">אנחנו מתחתנים!</p>
+        <p class="wedding-date">2.9.25 | וילה נונה</p>
+        <a
+          href="https://waze.com/ul/hsvbbg3bnj"
+          class="waze-link"
+          target="_blank"
+        >
+          🗺️ ניווט ב-Waze
+        </a>
+        <div class="divider"></div>
+      </header>
+
+      <main>
+        <section class="welcome-message">
+          <h2 class="welcome-title">ברוכים הבאים לחתונה שלנו!</h2>
+          <p class="welcome-text">
+            אנחנו נרגשים לחלוק את הרגע המיוחד הזה איתכם! הנוכחות שלכם בחתונה
+            שלנו חשובה לנו מאוד, ואנחנו מחכים לחגוג את האהבה שלנו איתכם.
+          </p>
+          <div class="hearts">💕 ✨ 💕</div>
+        </section>
+
+        <section class="gift-section">
+          <h2 class="gift-title">מתנות לחתונה</h2>
+          <p class="gift-subtitle">
+            תודה שלקחתם חלק בחתונה שלנו! לנוחות שלכם מצורפים לינקים להעברת
+            המתנות :)
+          </p>
+
+          <div class="payment-buttons">
+            <a
+              href="https://www.bitpay.co.il/app/me/62418EDC-C0A8-5637-439C-5CD3CDB0ED1E4345"
+              class="payment-btn bit"
+              target="_blank"
+            >
+              💳 תשלום דרך ביט
+            </a>
+            <a
+              href="https://link.payboxapp.com/RjwWmncdkqztPtaw5"
+              class="payment-btn paybox"
+              target="_blank"
+            >
+              📱 תשלום דרך פייבוקס
+            </a>
+          </div>
+        </section>
+
+        <section class="photos-section">
+          <h2 class="photos-title">תמונות מהחתונה</h2>
+
+          <div class="photo-subsections">
+            <div class="photo-subsection">
+              <h3 class="photo-subtitle">צפייה בתמונות</h3>
+              <p class="photo-text">כאן יהיה קישור לכל התמונות מיום החתונה!</p>
+              <a href="#" class="photo-btn view-photos" id="view-photos-btn">
+                📸 צפו בתמונות החתונה
+              </a>
+            </div>
+
+            <div class="photo-subsection">
+              <h3 class="photo-subtitle">שיתוף תמונות</h3>
+              <p class="photo-text">
+                וכאן יש אלבום שיתופי שתוכלו לעלות אליו את כל התמונות שצלמתם
+                מהחתונה שלנו!
+              </p>
+              <a
+                href="https://photos.app.goo.gl/Vhca3PJyduVmmoCy8"
+                class="photo-btn upload-photos"
+                target="_blank"
+              >
+                📤 העלו תמונות לאלבום
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p><br />גל ואלמוג ❤️</p>
+      </footer>
+    </div>
+
+    <script>
+      // All payment links are now active - no need for click handlers
+
+      // Photo buttons event handlers
+      document
+        .getElementById("view-photos-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          alert("קישור לצפייה בתמונות החתונה יוגדר בקרוב!");
+        });
+
+      // Shared album link is now active - no need for click handler
+
+      // PayBox link is now active - no need for click handler
+
+      // Add some interactive sparkle effect
+      document.addEventListener("mousemove", function (e) {
+        if (Math.random() > 0.95) {
+          createSparkle(e.clientX, e.clientY);
+        }
+      });
+
+      function createSparkle(x, y) {
+        const sparkle = document.createElement("div");
+        sparkle.style.position = "fixed";
+        sparkle.style.left = x + "px";
+        sparkle.style.top = y + "px";
+        sparkle.style.width = "4px";
+        sparkle.style.height = "4px";
+        sparkle.style.background = "#f0e6d2";
+        sparkle.style.borderRadius = "50%";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.zIndex = "1000";
+        sparkle.style.animation = "sparkle 1s ease-out forwards";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          document.body.removeChild(sparkle);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
