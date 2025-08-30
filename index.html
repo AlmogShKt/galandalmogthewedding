@@ -12,15 +12,15 @@
         <h1 class="couple-names">Gal & Almog</h1>
         <p class="wedding-date">אנחנו מתחתנים!</p>
         <p class="wedding-date">2.9.25 | וילה נונה</p>
-        
+
         <div class="couple-image-container">
-          <img 
-            src="https://almogshkt.github.io/galandalmogthewedding/our-image.png" 
-            alt="Gal & Almog" 
+          <img
+            src="https://almogshkt.github.io/galandalmogthewedding/our-image.png"
+            alt="Gal & Almog"
             class="couple-image"
           />
         </div>
-        
+
         <a
           href="https://waze.com/ul/hsvbbg3bnj"
           class="waze-link"
@@ -49,21 +49,38 @@
           </p>
 
           <div class="payment-buttons">
+                        <a
+              class="paybox-payment-link payment-btn paybox"
+              href="https://link.payboxapp.com/RjwWmncdkqztPtaw5"
+              target="_blank"
+            >
+               תשלום דרך פייבוקס
+            </a>
             <a
               href="https://www.bitpay.co.il/app/me/62418EDC-C0A8-5637-439C-5CD3CDB0ED1E4345"
               class="payment-btn bit"
               target="_blank"
             >
-              💳 תשלום דרך ביט
+               תשלום דרך ביט
             </a>
-            <a
-              href="https://link.payboxapp.com/RjwWmncdkqztPtaw5"
-              class="payment-btn paybox"
-              target="_blank"
-            >
-              📱 תשלום דרך פייבוקס
-            </a>
+
           </div>
+
+          <div class="support-message">
+            <p class="support-text">
+              💡 במידה והתשלום ב-PayBox לא הצליח, יש לסגור את האפליקציה ולפתוח
+              מחדש
+            </p>
+            <p>
+              לחלופין אפשר להעביר ישר אלינו ללא שימוש בלינק
+              <ul>
+                <li>Gal - 0506563352</li>
+                <li>Almog - 0586669888</li>
+              </ul>
+            </p>
+          </div>
+
+          <script></script>
         </section>
 
         <section class="photos-section">
@@ -103,6 +120,25 @@
 
     <script>
       // All payment links are now active - no need for click handlers
+
+      // Randomize PayBox link: choose one of two links 50/50 and set href on the element
+      (function randomizePayboxLink() {
+        const link1 = "https://links.payboxapp.com/8CeV7SY9WUb"; // edit later if needed
+        const link2 = "https://links.payboxapp.com/8CeV7SY9WUb"; // edit later if needed
+
+        try {
+          const payboxEl = document.querySelector(".paybox-payment-link");
+          if (!payboxEl) return;
+
+          const chosen = Math.random() < 0.5 ? link1 : link2;
+          payboxEl.href = chosen;
+          // store chosen link for debugging or analytics
+          payboxEl.setAttribute("data-chosen-paybox", chosen);
+        } catch (err) {
+          // fail silently
+          console.warn("Could not randomize PayBox link", err);
+        }
+      })();
 
       // Photo buttons event handlers
       document
